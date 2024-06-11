@@ -1,2 +1,9 @@
+defaults:
+  - _self_
+
 script: ???
 log_dir: ???
+
+hydra:
+  run:
+    dir: ${log_dir}

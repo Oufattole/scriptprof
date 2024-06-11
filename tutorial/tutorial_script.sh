@@ -12,9 +12,10 @@ if [ ! -e "$TEMPD" ]; then
 fi
 
 # Run the script-prof command with the specified arguments.
-script-prof log_dir="${TEMPD}" script="sleep 1"
+script-prof log_dir="${TEMPD}" script="sleep 1" hydra.run.dir=. hydra/job_logging=disabled hydra/hydra_logging=disabled
 ls "${TEMPD}"
 cat "${TEMPD}/profile_summary.json"
+echo
 
 # Make sure the temp directory gets removed on script exit.
 trap "exit 1"           HUP INT PIPE QUIT TERM
