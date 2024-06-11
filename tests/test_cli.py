@@ -27,7 +27,7 @@ def test_scriptprof():
         log_dir = Path(d)
 
         kwargs = {
-            "script": "\"'echo hello, world $time'\"",
+            "script": "\"'echo foo 1>&2 && echo hello, world $time'\"",
             "log_dir": str(log_dir.resolve()),
         }
         with initialize(version_base=None, config_path="../src/scriptprof/"):  # path to config.yaml
@@ -43,7 +43,7 @@ def test_scriptprof_cli():
         log_dir = Path(d)
 
         kwargs = {
-            "script": "\"'echo hello, world $time'\"",
+            "script": "\"'echo foo 1>&2 && echo hello, world $time'\"",
             "log_dir": str(log_dir.resolve()),
         }
 

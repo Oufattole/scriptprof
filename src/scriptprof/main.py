@@ -19,7 +19,7 @@ if not config_yaml.is_file():
 def parse_times(log_dir: Path) -> Mapping[str, Any]:
     output_dict = dict()
     timings = open(Path(log_dir) / "cmd.stderr").read()
-    times = [time.split("\t") for time in timings.split("\n")[1:4]]
+    times = [time.split("\t") for time in timings.split("\n")[-4:-1]]
     for key, value in times:
         output_dict[key + "_time"] = value
     output_dict
