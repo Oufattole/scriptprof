@@ -1,0 +1,30 @@
+[project]
+name = "script-prof"
+version = "0.0.1"
+authors = [
+  { name="Nassim Oufattole", email="noufattole@gmail.com" },
+]
+description = "Simple script for collecting logs of memory and time profiling."
+readme = "README.md"
+requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = ["loguru", "hydra-core", "pandas", "memory-profiler", "matplotlib"]
+
+[project.scripts]
+script-prof = "scriptprof.main:run_profile"
+
+[project.optional-dependencies]
+dev = ["pre-commit"]
+tests = ["pytest", "pytest-cov", "rootutils"]
+
+[build-system]
+requires = ["setuptools>=61.0", "setuptools-scm>=8.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project.urls]
+Homepage = "https://github.com/Oufattole/scriptprof"
+Issues = "https://github.com/Oufattole/scriptprof/issues"
