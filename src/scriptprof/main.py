@@ -71,7 +71,6 @@ def run_profile(cfg):
     subprocess.run(f"mprof peak {log_dir}/mprofile.dat > {log_dir}/peak_memory_usage.txt", shell=True)
     # Extract the profile
     profile = extract_profile(Path(log_dir))
-    logger.info(f"Profile: {profile}")
     json.dump(profile, open(f"{log_dir}/profile_summary.json", "w"))
 
 

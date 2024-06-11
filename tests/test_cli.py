@@ -30,7 +30,6 @@ def test_scriptprof():
             "script": "\"'echo hello, world $time'\"",
             "log_dir": str(log_dir.resolve()),
         }
-
         with initialize(version_base=None, config_path="../src/scriptprof/"):  # path to config.yaml
             overrides = [f"{k}={v}" for k, v in kwargs.items()]
             cfg = compose(config_name="config", overrides=overrides)  # config.yaml
